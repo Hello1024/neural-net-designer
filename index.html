@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Neural-net-designer by Hello1024</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Neural-net-designer</h1>
+        <p>Why not use a neural network to decide the topology of a neural net?</p>
+
+        <p class="view"><a href="https://github.com/Hello1024/neural-net-designer">View the Project on GitHub <small>Hello1024/neural-net-designer</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Hello1024/neural-net-designer/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Hello1024/neural-net-designer/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Hello1024/neural-net-designer">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>This experimental project is to train a neural network to design another neural net.</p>
+
+<h2>
+<a id="high-level-design" class="anchor" href="#high-level-design" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>High level design</h2>
+
+<p>We use a predictor network to decide, for a given node in a network (input and output connectivity, weights, learning rate parameters), the utility of that node to the networks loss function.</p>
+
+<p>Then the network is trained for a while both with and without a particular node.  If the node adds to the networks accuracy, the predictor network is trained with a positive output, otherwise that result is trained with a negative output.</p>
+
+<p>New nodes shall be added to the network periodically based on sampling highly positive outputs from the predictor network.</p>
+
+<p>The network shall be regularly checkpointed, and reverted to checkpoints whenever loss regresses.</p>
+
+<h2>
+<a id="implementation" class="anchor" href="#implementation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementation</h2>
+
+<p>Not yet started.  The nature of this design makes it suboptimal for parallelization on GPU's etc, so it will be implemented for toy models only.   </p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Hello1024">Hello1024</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

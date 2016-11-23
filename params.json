@@ -1,0 +1,6 @@
+{
+  "name": "Neural-net-designer",
+  "tagline": "Why not use a neural network to decide the topology of a neural net?",
+  "body": "This experimental project is to train a neural network to design another neural net.\r\n\r\n## High level design\r\n\r\nWe use a predictor network to decide, for a given node in a network (input and output connectivity, weights, learning rate parameters), the utility of that node to the networks loss function.\r\n\r\nThen the network is trained for a while both with and without a particular node.  If the node adds to the networks accuracy, the predictor network is trained with a positive output, otherwise that result is trained with a negative output.\r\n\r\nNew nodes shall be added to the network periodically based on sampling highly positive outputs from the predictor network.\r\n\r\nThe network shall be regularly checkpointed, and reverted to checkpoints whenever loss regresses.\r\n\r\n## Implementation\r\n\r\nNot yet started.  The nature of this design makes it suboptimal for parallelization on GPU's etc, so it will be implemented for toy models only.   ",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
